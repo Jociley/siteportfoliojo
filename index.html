@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio | Jociley Moreira</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+  /* Modernização do layout do portfólio */
+  body {
+    background: linear-gradient(135deg, #f8fafc 0%, #f3e8ff 100%);
+    color: #1f2937;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+  .container {
+    width: min(1100px, 94%);
+    margin-inline: auto;
+  }
+  .topo {
+    background: #fff;
+    border-bottom: 2px solid #ede9fe;
+    box-shadow: 0 2px 12px rgba(109,40,217,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    gap: 0;
+  }
+  .menu {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    width: 100%;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--prim);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--prim);
+    box-shadow: 0 2px 8px rgba(109,40,217,0.10);
+  }
+  .menu {
+    display: flex;
+    gap: 2.5rem;
+  }
+  .menu a {
+    padding: 1.1rem .9rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #4b5563;
+    transition: background .18s, color .18s;
+  }
+  .menu a:hover {
+    background: #4b1fa6;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(109,40,217,0.18);
+    text-shadow: 0 1px 2px #2226;
+  }
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 48px 0 32px 0;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(109,40,217,0.06);
+    margin-bottom: 32px;
+  }
+  .hero__texto {
+    flex: 1 1 320px;
+    min-width: 260px;
+  }
+  .hero__texto h1 {
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 16px;
+    color: var(--prim-esc);
+  }
+  .hero__texto h1 span {
+    color: var(--prim);
+  }
+  .hero__texto p {
+    color: var(--cinza);
+    margin: 0 0 20px;
+    font-size: 1.1rem;
+  }
+  .hero__mídia img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--prim);
+    box-shadow: 0 4px 24px rgba(109,40,217,0.10);
+    margin: 0 auto;
+    display: block;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--prim);
+    color: #fff;
+    padding: .85rem 1.3rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(109,40,217,0.10);
+    transition: .18s, transform .18s;
+  }
+  .btn:hover {
+    background: var(--prim-esc);
+    transform: translateY(-2px) scale(1.04);
+  }
+  /* Sobre */
+  .sec.sobre {
+    background: #f3e8ff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(109,40,217,0.06);
+    padding: 40px 24px 32px 24px;
+    margin-bottom: 32px;
+  }
+  .sobre-titulo {
+    color: var(--prim-esc);
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  .sobre-paragrafo {
+    font-size: 1.13rem;
+    color: #444;
+    margin-bottom: 18px;
+  }
+  .tags {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .tags li {
+    background: #fff;
+    border: 1.5px solid var(--prim);
+    color: var(--prim-esc);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: .45rem .9rem;
+    border-radius: 999px;
+  }
+  /* Projetos */
+  .projetos-titulo {
+    color: var(--prim-esc);
+    font-size: 2rem;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .projeto1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(109,40,217,0.18), 0 1.5px 0 #ede9fe;
+    border: 1.5px solid #ede9fe;
+    overflow: hidden;
+    transition: transform .18s, box-shadow .18s;
+    position: relative;
+    z-index: 1;
+  }
+  .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(109,40,217,0.16);
+  }
+  .card__img, .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1.5px solid #ede9fe;
+  }
+  .card__body {
+    padding: 20px 18px 16px 18px;
+  }
+  .info-projetos {
+    color: var(--prim-esc);
+    font-size: 1.18rem;
+    margin-bottom: 8px;
+  }
+  .paragrafo-projetos {
+    color: #555;
+    font-size: 1.02rem;
+    margin-bottom: 14px;
+  }
+  .card__links {
+    display: flex;
+    gap: 16px;
+  }
+  .card__links a {
+    color: var(--prim);
+    font-weight: 600;
+    font-size: 1.01rem;
+    transition: color .18s;
+  }
+  .card__links a:hover {
+    color: var(--prim-esc);
+    text-decoration: underline;
+  }
+  /* Contato */
+  .sec.hero.container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(109,40,217,0.06);
+    padding: 40px 24px 32px 24px;
+    margin-bottom: 32px;
+  }
+  .contato-titulo {
+    color: var(--prim-esc);
+    font-size: 2rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .paragrafo-contato {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .form {
+    background: #f3e8ff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(109,40,217,0.04);
+    padding: 28px 18px 18px 18px;
+    margin: 0 auto;
+    max-width: 480px;
+  }
+  .campo label {
+    color: var(--prim-esc);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  input, textarea {
+    background: #fff;
+    border: 1.5px solid #ede9fe;
+    border-radius: 8px;
+    font: inherit;
+    padding: .75rem;
+    margin-bottom: 8px;
+    transition: border .18s;
+  }
+  input:focus, textarea:focus {
+    outline: 2px solid var(--prim);
+    border-color: var(--prim-esc);
+  }
+  .msg-status {
+    margin-top: 8px;
+    color: var(--cinza);
+  }
+  /* Responsividade aprimorada */
+  @media (max-width: 900px) {
+    .container { width: 98%; }
+    .hero, .sec.sobre, .sec.hero.container { padding: 24px 8px; }
+    .projeto1 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero { flex-direction: column; gap: 18px; }
+    .hero__mídia img { width: 120px; height: 120px; }
+    .sec.sobre, .sec.hero.container { padding: 16px 2px; }
+    .form { padding: 12px 4px; }
+  }
+  /* Aprimoramento do footer */
+  .rodape {
+  background: linear-gradient(90deg, #d289df 0%, #6d28d9 100%);
+  color: #fff;
+  margin-top: 48px;
+  border-top: 4px solid #fff;
+  box-shadow: 0 -2px 16px rgba(109,40,217,0.08);
+  }
+  .rodape__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0 16px 0;
+  }
+  .rodape__grid p {
+    color: #fff;
+  }
+  .social {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+  }
+  .social a img {
+    filter: drop-shadow(0 2px 8px rgba(109,40,217,0.12));
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(109,40,217,0.10);
+  }
+  .social a:hover img {
+    transform: scale(1.18) rotate(-4deg);
+    box-shadow: 0 4px 16px rgba(109,40,217,0.18);
+  }
+    /* Reset básico e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #1f2937; background: #ffffff; }
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+.skip-link { position:absolute; left:-9999px; top:auto; }
+.skip-link:focus { left: 16px; top: 16px; background:#111; color:#fff; padding:.5rem .75rem; border-radius:.25rem; }
+
+/* Tema */
+:root{
+  --prim:#6d28d9;   /* roxo */
+  --prim-esc:#5b21b6;
+  --cinza:#6b7280;
+  --bg-suave:#f8fafc;
+  --borda:#e5e7eb;
+  --radius:12px;
+  --vidro:rgba(255, 255, 255, 0.1);
+}
+.container { width: min(1120px, 92%); margin-inline: auto; }
+.sec { padding: 64px 0; }
+
+.menu-link::before{
+  content:"" ;
+  height:2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--prim), var(--secun));
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+  border-radius: 50px;
+  border: 4px solid var(--vidro);
+}
+.menu-link::after{
+  width: 100%;
+}
+
+/* Header fixo */
+.topo { position: flex; top: 0; z-index: 100; background:#fff; border-bottom:1px solid var(--borda); }
+.nav { display:fixed; align-items:center; justify-content:space-between; min-height:64px; }
+.logo { font-weight: 600; font-size: 1.25rem; letter-spacing: .5px; }
+.logo span { color: var(--prim); }
+.menu { display:flex; gap: 3rem; }
+.menu a { padding: 1.5rem .75rem; border-radius: 8px; }
+.menu a:hover { background: var(--bg-suave); }
+
+
+/* Hero */
+.hero { display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap: 32px; }
+.hero__texto h1 { font-size: clamp(1.8rem, 3.6vw, 3rem); line-height: 1.1; margin: 0 0 12px; }
+.hero__texto h1 span{ color: var(--prim); }
+.hero__texto p { color: var(--cinza); margin: 0 0 20px; }
+.btn { display:inline-block; background: var(--prim); color:#fff; padding:.75rem 1.1rem; border-radius:10px; font-weight:600; }
+.btn:hover { background: var(--prim-esc); }
+
+/* Seções */
+h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); margin:0 0 24px; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; padding:0; list-style:none; }
+.tags li{ background: var(--bg-suave); border:1px solid var(--borda); padding:.35rem .6rem; border-radius:999px; font-size:.9rem; color:#111; }
+
+/* Grid de projetos */
+.grid { display:grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+.card { border:1px solid var(--borda); border-radius: var(--radius); overflow:hidden; background:#fff; }
+.card__body { padding: 16px; }
+.card h3 { margin:0 0 8px; font-size:1.1rem; }
+.card p { margin:0 0 12px; color: var(--cinza); }
+.card__links { display:flex; gap:12px; }
+.card__links a { color: var(--prim); font-weight:600; }
+
+/* Formulário */
+.form { display:grid; gap:16px; max-width:640px; }
+.campo { display:grid; gap:8px; }
+input, textarea { padding:.75rem; border:1px solid var(--borda); border-radius:10px; font:inherit; }
+input:focus, textarea:focus { outline:2px solid var(--prim); border-color:transparent; }
+.msg-status { margin-top:8px; color:var(--cinza); }
+
+/* Rodapé */
+.rodape { background:rgb(210, 137, 223); color:black; }
+.rodape__grid { display:flex; align-items:center; justify-content:center; gap:40px; padding:24px 0; }
+
+.social { display:flex; gap: 40px; list-style:none; padding:0; }
+.social a { display:inline-block; line-height: 0%; }
+.social img:hover { transform: scale(1.2);}
+.social a:hover { text-decoration: underline; }
+
+/* Botão “voltar ao topo” */
+.toTop{
+  position: fixed; right:16px; bottom:16px; width:44px; height:44px;
+  display:grid; place-items:center; border:none; border-radius:50%;
+  background: var(--prim); color:#fff; font-size:1.25rem; cursor:pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18); opacity:0; visibility:hidden; transition:.25s;
+}
+.toTop.visivel{ opacity:1; visibility:visible; }
+
+/* Responsividade */
+@media (max-width: 1024px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+  .hero { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px){
+  .menu { gap: .25rem; }
+  .menu a { padding: .5rem; }
+  .grid{ grid-template-columns: 1fr; }
+} 
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topo">
+    <nav class="nav container">
+  <!-- Logo removido, apenas menu -->
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- INÍCIO -->
+    <section id="inicio" class="sec hero container">
+      <div class="hero__texto">
+        <h1>Olá, eu sou <span>Jociley Moreira</span></h1>
+        <p>Desenvolvedora em formação | ADS – ENIAC | Projetos em HTML, CSS, JS e Dados.</p>
+        <a class="btn" href="#projetos">Ver Projetos</a>
+      </div>
+      <div class="hero__mídia">
+        <img src="avatarjo.jpg" alt="Foto de perfil de Jociley" />
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="Sobre" class="sec sobre container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 36px;">
+      <div style="flex: 0 0 140px; text-align: center;">
+        <!-- Foto de perfil: troque 'avatarjo.jpg' por outra imagem se desejar -->
+  <img src="avatarjo.jpg" alt="Foto de Jociley sorrindo" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--prim); box-shadow: 0 2px 12px rgba(109,40,217,0.10); margin-bottom: 12px;">
+
+        <div style="font-size: 0.95em; color: var(--prim-esc); margin-top: 4px;">Jociley Moreira</div>
+      </div>
+      <div style="flex: 1 1 260px; min-width: 220px;">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <p class="sobre-paragrafo" style="font-size:1.13em;">
+          Sou apaixonada por tecnologia, criatividade e aprendizado contínuo. Atualmente curso Análise e Desenvolvimento de Sistemas (ADS) no ENIAC, onde desenvolvo projetos que unem design, código e solução de problemas reais.<br><br>
+          Meu foco é criar experiências digitais acessíveis, bonitas e funcionais, seja no front-end, banco de dados ou análise de dados. Acredito que a tecnologia pode transformar vidas e adoro colaborar em projetos que tenham propósito.<br><br>
+          <span style="color:var(--prim); font-weight:600;">"Transformar ideias em soluções é o que me motiva todos os dias."</span>
+        </p>
+        <div style="display:flex; gap:18px; align-items:center; margin-top:18px; margin-bottom:18px;">
+          <div title="HTML5" style="background:#fff; border-radius:50%; box-shadow:0 2px 8px #ede9fe; padding:10px;">
+            <img src="assets/html5.svg" alt="HTML5" width="32" height="32" onerror="this.style.display='none'">
+          </div>
+          <div title="CSS3" style="background:#fff; border-radius:50%; box-shadow:0 2px 8px #ede9fe; padding:10px;">
+            <img src="assets/css3.svg" alt="CSS3" width="32" height="32" onerror="this.style.display='none'">
+          </div>
+          <div title="JavaScript" style="background:#fff; border-radius:50%; box-shadow:0 2px 8px #ede9fe; padding:10px;">
+            <img src="assets/js.svg" alt="JavaScript" width="32" height="32" onerror="this.style.display='none'">
+          </div>
+          <div title="MySQL" style="background:#fff; border-radius:50%; box-shadow:0 2px 8px #ede9fe; padding:10px;">
+            <img src="assets/mysql.svg" alt="MySQL" width="32" height="32" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <!-- Galeria de fotos pessoal -->
+        <div class="galeria-sobre" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px;">
+          <!-- Substitua os src abaixo pelos nomes das suas fotos -->
+          <img src="jociley.jpeg" alt="Foto de Jociley" style="width:90px; height:90px; object-fit:cover; border-radius:12px; box-shadow:0 2px 8px #ede9fe; border:2px solid #fff;">
+          <img src="avatarjo.jpg" alt="Avatar Jociley" style="width:90px; height:90px; object-fit:cover; border-radius:12px; box-shadow:0 2px 8px #ede9fe; border:2px solid #fff;">
+          <img src="alquimia digital.png" alt="Alquimia Digital" style="width:90px; height:90px; object-fit:cover; border-radius:12px; box-shadow:0 2px 8px #ede9fe; border:2px solid #fff;">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa"></div>
+
+      <div class="projeto1">
+        <!-- Card 1 -->
+        <article class="card">
+          <img src="Administracao.png" width="600" height="auto" alt="Capa de Projeto 1" class="card__img">
+          <div class="card__body">
+            <h3 class="info-projetos"> Zoológico</h3>
+            <p class="paragrafo-projetos">Site informativo com galeria por categorias e layout responsivo.</p>
+            <div class="card__links">
+              <a target="_blank" rel="noopener" href="zoologico-brazuca/index.html">Ver Online</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <img src="ValidaMais.jpg" width="600" height="auto" alt="Capa do Projeto 2">
+          <div class="card__body">
+            <h3 class="info-projetos">ValidaMais</h3>
+            <p class="">Protótipo de gestão de credenciais com notificações e dashboard (em construção).</p>
+            <div class="card__links">
+              <a target="_blank" rel="noopener" href="#">Ver Online</a>
+              <a target="_blank" rel="noopener" href="#">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <img src="analisededados.png" width="600" height="auto" alt="Capa do Projeto 3">
+          <div class="card__body">
+            <h3 class="info-projetos">Dashboard Collaborator Performance</h3>
+            <p class="paragrafo-projetos">Aplicativo simples de análise comportamental para facilitar a tomada de decisões.</p>
+            <div class="card__links">
+              <a target="_blank" rel="noopener" href="#">Ver Online</a>
+              <a target="_blank" rel="noopener" href="#">Código</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="sec hero container" style="background: linear-gradient(135deg, #f3e8ff 60%, #ede9fe 100%); box-shadow: 0 2px 16px rgba(109,40,217,0.08); border-radius: 18px;">
+      <h2 class="contato-titulo">Contato</h2>
+  <p class="paragrafo-contato" style="color: var(--prim-esc);">Fique à vontade para enviar uma mensagem!</p>
+  <form id="form-contato" class="form" style="max-width:600px; min-width:320px; margin:0 auto; background:#fff; border-radius:14px; box-shadow:0 2px 12px rgba(109,40,217,0.06); padding:16px 32px 8px 32px;">
+        <div class="campo" style="position:relative;">
+          <label for="nome">Nome</label>
+          <span style="position:absolute; left:10px; top:38px; color:#b39ddb; font-size:1.2em;">
+            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 9a3 3 0 100-6 3 3 0 000 6zM2 15c0-2.21 3.58-4 7-4s7 1.79 7 4v1H2v-1z" fill="#6d28d9"/></svg>
+          </span>
+          <input id="nome" name="nome" type="text" required placeholder="Seu nome" style="padding-left:36px;" />
+        </div>
+        <div class="campo" style="position:relative;">
+          <label for="email">E-mail</label>
+          <span style="position:absolute; left:10px; top:38px; color:#b39ddb; font-size:1.2em;">
+            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm1.2.8l4.8 3.6 4.8-3.6" stroke="#6d28d9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <input id="email" name="email" type="email" required placeholder="@email.com" style="padding-left:36px;" />
+        </div>
+        <div class="campo" style="position:relative;">
+          <label for="mensagem">Mensagem</label>
+          <span style="position:absolute; left:10px; top:38px; color:#b39ddb; font-size:1.2em;">
+            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 15V5a2 2 0 012-2h10a2 2 0 012 2v10l-7-3-7 3z" stroke="#6d28d9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva aqui..." style="padding-left:36px;"></textarea>
+        </div>
+        <button class="btn" type="submit" style="width:100%; font-size:1.1em; margin-top:8px;">Enviar</button>
+        <p id="msg-status" class="msg-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__grid container">
+      <div style="text-align:center; width:100%;">
+        <p style="margin: 0 0 8px; font-weight: 500;">© 2025 Jociley - Todos os Direitos Reservados</p>
+        <p style="margin: 0 0 16px; color: var(--prim-esc); font-size: 1.05rem;">Me siga nas redes sociais:</p>
+        <ul class="social" aria-label="Redes sociais">
+          <li>
+            <a href="https://www.linkedin.com/in/jociley-dos-santos-moreira-gomes-640a99337" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img src="linkedin.png" alt="LinkedIn" width="40" height="40" style="border-radius: 8px; transition: transform .2s;" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jocileydosSantos" target="_blank" rel="noopener" aria-label="GitHub">
+              <img src="github.png" alt="GitHub" width="40" height="40" style="border-radius: 8px; transition: transform .2s;" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/jocileymoreira3" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="instagram.png" alt="Instagram" width="40" height="40" style="border-radius: 8px; transition: transform .2s;" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" class="toTop" aria-label="Voltar ao topo">↑</button>
+  <script src="./script.js" defer></script>
+</body>
+</html>
