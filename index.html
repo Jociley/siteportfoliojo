@@ -223,7 +223,7 @@
   .sec.hero.container {
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(109,40,217,0.06);
+    box-shadow: 0 2px 16px #5b21b6;
     padding: 40px 24px 32px 24px;
     margin-bottom: 32px;
   }
@@ -397,6 +397,14 @@ input, textarea { padding:.75rem; border:1px solid var(--borda); border-radius:1
 input:focus, textarea:focus { outline:2px solid var(--prim); border-color:transparent; }
 .msg-status { margin-top:8px; color:var(--cinza); }
 
+/* Cor personalizada para o subtítulo 'certificados' */
+.certificados-titulo {
+  text-align: center;
+  color: #5B21B6;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 /* Rodapé */
 .rodape { background:rgb(210, 137, 223); color:black; }
 .rodape__grid { display:flex; align-items:center; justify-content:center; gap:40px; padding:24px 0; }
@@ -438,6 +446,7 @@ input:focus, textarea:focus { outline:2px solid var(--prim); border-color:transp
         <li><a href="#Sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="#certificados">Certificados</a></li>
       </ul>
     </nav>
   </header>
@@ -570,6 +579,19 @@ input:focus, textarea:focus { outline:2px solid var(--prim); border-color:transp
         <button class="btn" type="submit" style="width:100%; font-size:1.1em; margin-top:8px;">Enviar</button>
         <p id="msg-status" class="msg-status" role="status" aria-live="polite"></p>
       </form>
+    </section>
+
+    <!-- CERTIFICADOS -->
+    <section id="certificados" class="sec hero container"style="background: linear-gradient(135deg, #f3e8ff 60%, #ede9fe 100%); box-shadow: 0 2px 16px #5b21b6; border-radius: 18px;">
+      <h2 class="certificados-titulo">Certificados</h2>
+
+      <p class="paragrafo-certificados" style="color: var(--prim-esc);">Aqui estão alguns dos meus certificados:</p>
+      <ul class="lista-certificados">
+        <li><a href="https://drive.google.com/file/d/13pz4d52h52PBr9W_oTqSVA2id7VEf3KF/view?usp=sharing" target="_blank">Aplicações Práticas de Visão Computacional e Machine Learning.</a></li>
+        <li><a href="https://drive.google.com/file/d/1jL5TDTRnhhyXA7Sbyz416ITFOxgnKarv/view?usp=sharing" target="_blank">Capacitação em Inteligência Artificial: Dominando a IA (CPTIA)</a></li>
+        <li><a href="https://drive.google.com/file/d/1I6iYrPalRDkTMNQ2y6h6gkWUzpwXnyUl/view?usp=sharing" target="_blank">Desenvolvendo Aplicações Mobile</a></li>
+       
+      </ul>
     </section>
   </main>
 
